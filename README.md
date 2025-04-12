@@ -107,7 +107,7 @@ The project follows this directory structure:
 - `./src/types.ts` - Shared types for backend and frontend
 - `./src/components` - Client-side components (Astro and React)
 - `./src/components/ui` - Shadcn/ui components
-- `./src/lib` - Services and helpers 
+- `./src/lib` - Services and helpers
 - `./src/assets` - Static internal assets
 - `./public` - Public assets
 
