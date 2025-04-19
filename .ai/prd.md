@@ -75,6 +75,7 @@ Następujące funkcjonalności NIE są częścią MVP:
 - Tytuł: Rejestracja nowego konta
 - Opis: Jako nowy użytkownik, chcę utworzyć konto w aplikacji, aby móc korzystać z jej funkcjonalności.
 - Kryteria akceptacji:
+  - Na stronie glównej znajduje się Button, który umoliwia przejście nad stronę z formularzem
   - Formularz rejestracji zawiera pola: email, hasło, potwierdzenie hasła
   - System waliduje poprawność adresu email
   - System wymaga hasła o długości minimum 8 znaków
@@ -87,7 +88,7 @@ Następujące funkcjonalności NIE są częścią MVP:
 - Kryteria akceptacji:
   - Formularz logowania zawiera pola: email i hasło
   - System waliduje poprawność wprowadzonych danych
-  - Po udanym logowaniu użytkownik jest przekierowywany do strony głównej
+  - Po udanym logowaniu użytkownik jest przekierowywany do strony dashboard
   - W przypadku błędnych danych system wyświetla odpowiedni komunikat
 
 #### US-003
