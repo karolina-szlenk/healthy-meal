@@ -2,15 +2,20 @@
 import { Button } from "@/components/ui/button";
 ---
 
-<section class="bg-gradient-to-br from-gray-100 to-gray-300 text-gray-900 min-h-screen flex items-center">
-  <div class="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center">
+<section class="bg-gray-100 text-gray-900 py-8">
+  <div class="container mx-auto px-4 py-6 flex flex-col lg:flex-row items-center">
     <div class="flex-1 space-y-6">
-      <h1 class="text-4xl lg:text-6xl font-bold">Zdrowa przyszłość na wyciągnięcie ręki</h1>
-      <p class="text-lg lg:text-xl">
-        Odkryj nowe podejście do zdrowego gotowania – jedz mądrze, żyj pełnią życia. Nasza aplikacja łączy tradycję z
-        nowoczesną technologią, by inspiracje kulinarne stały się codziennością.
+      <h1 class="text-3xl lg:text-4xl font-bold">Twoje pescatariańskie menu na wyciągnięcie ręki</h1>
+      <p class="text-base lg:text-lg">
+        Odkryj świat zdrowego gotowania dla pescatarian. Nasza aplikacja wykorzystuje sztuczną inteligencję, aby
+        dostosować przepisy do Twojej diety - bez mięsa, ale z pysznymi rybami i owocami morza. Oszczędzaj czas na
+        modyfikowaniu przepisów i ciesz się smacznymi, zdrowymi posiłkami.
       </p>
-      <Button className="bg-black hover:bg-gray-900 text-white">Zacznij teraz</Button>
+      <a href="/auth/register">
+        <Button className="bg-black hover:bg-gray-900 text-white w-full sm:w-auto px-8 py-3 text-center"
+          >Zacznij teraz</Button
+        >
+      </a>
     </div>
     <div class="flex-1 mt-8 lg:mt-0 lg:ml-8">
       <img

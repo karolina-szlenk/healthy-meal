@@ -1,14 +1,20 @@
 ---
-import AuthLayout from "../../layouts/AuthLayout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import AuthLayout from "@/layouts/AuthLayout.astro";
 import LoginForm from "../../components/auth/LoginForm";
 ---
 
-<AuthLayout title="Logowanie">
-  <div class="max-w-md mx-auto">
-    <h1 class="text-center text-2xl font-bold mb-4">Logowanie</h1>
+<MainLayout title="Login - HealthyMeal">
+  <AuthLayout>
+    <h1 class="text-2xl font-bold text-center mb-6">Logowanie</h1>
     <LoginForm client:load />
-    <p class="mt-4 text-center">
-      Nie masz konta? <a href="/auth/register" class="text-blue-500">Zarejestruj się</a>
-    </p>
-  </div>
-</AuthLayout>
+    <div class="mt-6 text-center space-y-2">
+      <p>
+        Nie masz konta? <a href="/auth/register" class="text-blue-500 hover:underline">Zarejestruj się</a>
+      </p>
+      <p>
+        <a href="/auth/recovery" class="text-blue-500 hover:underline">Zapomniałeś hasła?</a>
+      </p>
+    </div>
+  </AuthLayout>
+</MainLayout>
