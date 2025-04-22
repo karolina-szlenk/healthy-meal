@@ -7,21 +7,6 @@ const usePreferences = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (import.meta.env.DEV) {
-      // Use mock data in development
-      setTimeout(() => {
-        setPreferences({
-          user_id: "mock-user",
-          diet_type: "KETOGENIC",
-          calorie_target: 1800,
-          allergies: "Orzechy",
-          excluded_ingredients: "Cukier",
-        });
-        setLoading(false);
-      }, 1000);
-      return;
-    }
-
     const fetchPreferences = async () => {
       try {
         const response = await fetch("/api/preferences");

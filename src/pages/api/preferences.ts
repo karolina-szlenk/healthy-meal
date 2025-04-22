@@ -34,9 +34,19 @@ export const GET: APIRoute = async ({ locals }) => {
     }
     const preferences: PreferencesDTO | null = await getPreferences(supabase, user.id);
     if (!preferences) {
-      return new Response(JSON.stringify({ error: "Preferences not found" }), { status: 404 });
+      return new Response(
+        JSON.stringify({
+          user_id: user.id,
+          diet_type: null,
+          calorie_target: null,
+          allergies: null,
+          excluded_ingredients: null,
+          initialized: false,
+        }),
+        { status: 200 }
+      );
     }
-    return new Response(JSON.stringify(preferences), { status: 200 });
+    return new Response(JSON.stringify({ ...preferences, initialized: true }), { status: 200 });
   } catch (err) {
     console.error("GET /api/preferences error:", err);
     return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
@@ -66,9 +76,14 @@ export const POST: APIRoute = async ({ request, locals }) => {
 export const PUT: APIRoute = async ({ request, locals }) => {
   try {
     const { user, supabase } = locals as LocalsWithSupabase;
+    console.log("PUT /api/preferences - user object:", user);
+
     if (!user || !user.id) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
     }
+
+    console.log("PUT /api/preferences - user ID:", user.id);
+
     const body = await request.json();
     const parsed = updatePreferencesSchema.safeParse(body);
     if (!parsed.success) {

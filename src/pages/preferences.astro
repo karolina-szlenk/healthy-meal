@@ -1,6 +1,6 @@
 ---
 import PreferencesView from "../components/PreferencesView.tsx";
-import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <html lang="pl">
@@ -10,10 +10,10 @@ import Layout from "../layouts/Layout.astro";
     <title>Preferencje żywieniowe</title>
   </head>
   <body class="bg-gray-100">
-    <Layout>
+    <MainLayout>
       <main class="py-8">
         <PreferencesView client:load />
       </main>
-    </Layout>
+    </MainLayout>
   </body>
 </html>

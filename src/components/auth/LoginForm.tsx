@@ -49,8 +49,19 @@ const LoginForm: React.FC = () => {
     }
 
     try {
-      // TODO: Implement login functionality
-      console.log("Form data valid, calling API:", formData);
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        setErrors({ form: "Nie udało się zalogować." });
+        return;
+      }
+
+      // On success, redirect to dashboard
+      window.location.href = "/preferences";
     } catch (error) {
       console.error("Login failed:", error);
       setErrors({ form: "Wystąpił błąd podczas logowania. Spróbuj ponownie później." });
